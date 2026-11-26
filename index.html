@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#210d37">
+  <title>Happy Birthday Vicky!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="sparkleLayer" aria-hidden="true"></div>
+
+  <main>
+    <!-- PAGE 1: PIN -->
+    <section class="page active" id="page-pin">
+      <div class="decor decor-one">♡</div>
+      <div class="decor decor-two">🎈</div>
+      <div class="decor decor-three">✨</div>
+      <div class="decor decor-four">🎈</div>
+
+      <div class="glass-card welcome-card">
+        <p class="eyebrow">A little surprise for someone special</p>
+        <h1 class="birthday-title">Happy Birthday<br><span>Vicky</span></h1>
+        <p class="subtitle">Your magical birthday journey begins here</p>
+
+        <div class="pin-dots" id="pinDots" aria-label="PIN entry">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <input id="pinInput" class="pin-input" type="password" inputmode="numeric"
+               maxlength="4" autocomplete="off" placeholder="Enter your 4-digit PIN"
+               aria-label="Enter PIN">
+        <button class="primary-btn" id="pinButton">Unlock the surprise ✨</button>
+        <p class="hint" id="pinMessage">Hint: a special date 💖</p>
+      </div>
+    </section>
+
+    <!-- PAGE 2: ARROW -->
+    <section class="page" id="page-arrow">
+      <div class="glass-card arrow-card">
+        <p class="eyebrow">A little magic is waiting</p>
+        <h2>Ready, Vicky?</h2>
+        <p>Follow the arrow and touch the heart.</p>
+
+        <div class="archery-scene">
+          <div class="angel" aria-hidden="true">👼</div>
+          <div class="arrow-line" aria-hidden="true">➶</div>
+          <button class="heart-target" id="heartTarget" aria-label="Touch the heart">♥</button>
+        </div>
+        <p class="hint">Tap the heart to continue</p>
+      </div>
+    </section>
+
+    <!-- PAGE 3: BALLOONS -->
+    <section class="page" id="page-balloons">
+      <div class="glass-card activity-card">
+        <p class="eyebrow">Pop the balloons</p>
+        <h2>Let the birthday wishes fly!</h2>
+        <p>Tap each balloon to reveal a letter.</p>
+
+        <div class="balloon-group">
+          <h3>HAPPY</h3>
+          <div class="balloons" id="happyBalloons"></div>
+          <div class="revealed-word" id="happyWord"></div>
+        </div>
+
+        <div class="balloon-group">
+          <h3>BIRTHDAY</h3>
+          <div class="balloons" id="birthdayBalloons"></div>
+          <div class="revealed-word" id="birthdayWord"></div>
+        </div>
+
+        <div class="balloon-group">
+          <h3>VICKY</h3>
+          <div class="balloons" id="vickyBalloons"></div>
+          <div class="revealed-word" id="vickyWord"></div>
+        </div>
+
+        <button class="primary-btn hidden" id="balloonsNext">Light up your birthday 🕯️</button>
+      </div>
+    </section>
+
+    <!-- PAGE 4: CANDLES -->
+    <section class="page" id="page-candles">
+      <div class="glass-card activity-card">
+        <p class="eyebrow">Make a birthday wish</p>
+        <h2>Blow out the candles, Vicky!</h2>
+        <p>Allow microphone access and blow, or use the button below.</p>
+
+        <div class="candle-groups">
+          <div class="candle-row" id="candlesHappy"></div>
+          <div class="candle-row" id="candlesBirthday"></div>
+          <div class="candle-row" id="candlesVicky"></div>
+        </div>
+
+        <div class="candle-actions">
+          <button class="primary-btn" id="micButton">🎤 Enable microphone</button>
+          <button class="secondary-btn" id="blowButton">Blow out candles</button>
+        </div>
+        <p class="hint" id="micMessage">You can always use the button if the mic is unavailable.</p>
+
+        <div class="fire-message hidden" id="fireMessage">
+          <div class="fire-glow">HAPPY BIRTHDAY</div>
+          <div class="fire-name">Vicky!</div>
+        </div>
+        <button class="primary-btn hidden" id="candlesNext">Open your birthday memories 💖</button>
+      </div>
+    </section>
+
+    <!-- PAGE 5: AUDIO + FOUR PHOTOS -->
+    <section class="page" id="page-memories">
+      <div class="glass-card memories-card">
+        <p class="eyebrow">Our little collection of memories</p>
+        <h2>Four moments, endless memories</h2>
+
+        <div class="memory-grid">
+          <figure class="photo-frame"><img src="images/memory1.jpg" alt="Birthday memory 1"></figure>
+          <figure class="photo-frame"><img src="images/memory2.jpg" alt="Birthday memory 2"></figure>
+          <figure class="photo-frame"><img src="images/memory3.jpg" alt="Birthday memory 3"></figure>
+          <figure class="photo-frame"><img src="images/memory4.jpg" alt="Birthday memory 4"></figure>
+        </div>
+
+        <div class="music-box">
+          <div class="music-icon">♫</div>
+          <div>
+            <h3>A song for you</h3>
+            <p>Press play and enjoy your birthday song.</p>
+          </div>
+          <audio id="birthdayAudio" controls preload="metadata">
+            <source src="audio/birthday-song.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+          </audio>
+        </div>
+
+        <button class="primary-btn" id="memoriesNext">A letter from me to you 💌</button>
+      </div>
+    </section>
+
+    <!-- PAGE 6: ENVELOPE + LETTER -->
+    <section class="page" id="page-letter">
+      <div class="glass-card letter-card">
+        <p class="eyebrow">A little note from my heart</p>
+        <h2>Your letter is waiting</h2>
+        <p>Tap the key to open your envelope.</p>
+
+        <div class="envelope-scene">
+          <div class="envelope" id="envelope">
+            <div class="envelope-back"></div>
+            <div class="letter-paper" id="letterPaper">
+              <h3>Dear Vicky,</h3>
+              <p>
+                Happy 23rd birthday, my best friend! I hope you are doing well
+                and enjoying this beautiful part of your life.
+              </p>
+              <p>
+                From this birthday onward, I hope you learn more, earn more,
+                and reach the highest levels of success. May your future always
+                be bright. May you soar high and fly like an eagle.
+              </p>
+              <p>
+                You are a brave and strong girl—always be like that. I will
+                always pray to God that you achieve your dreams and succeed
+                in the days ahead.
+              </p>
+              <p>
+                I think you are the most beautiful, caring, and supportive
+                friend in my life. I will always be there for you, support you,
+                and stand by you during your sad times.
+              </p>
+              <p>
+                Finally, thank you for coming into my life. We will always be
+                the bestest of friends. Till my last breath, I will be your
+                supportive and die-hard friend.
+              </p>
+              <p class="letter-ending">Oii, once again, happy birthday, ma, my Thozhi!!! 💖</p>
+            </div>
+            <div class="envelope-flap"></div>
+            <div class="envelope-front"></div>
+            <div class="envelope-heart">♥</div>
+          </div>
+        </div>
+
+        <button class="primary-btn" id="openLetterButton">🗝️ Open with the key</button>
+        <p class="hint" id="letterMessage">Your letter will rise from the envelope.</p>
+        <button class="primary-btn hidden" id="letterNext">One last surprise 🎁</button>
+      </div>
+      <button class="primary-btn" id="openLetterButton" type="button">
+  Open my letter 💌
+</button>
+
+<p id="letterMessage"></p>
+
+<button class="primary-btn hidden" id="letterNext" type="button">
+  Open your birthday gift 🎁
+</button>
+    </section>
+
+    <!-- PAGE 7: GIFT + FIREWORKS -->
+    <section class="page" id="page-gift">
+      <canvas id="fireworksCanvas" aria-hidden="true"></canvas>
+      <div class="glass-card gift-card">
+        <p class="eyebrow">The final birthday surprise</p>
+        <h2>Something special for you</h2>
+        <button class="gift-box" id="giftBox" aria-label="Open your birthday gift">
+          <span class="gift-bow">🎀</span>
+          <span class="gift-emoji">🎁</span>
+          <span class="gift-label">Tap to open</span>
+        </button>
+
+        <div class="final-surprise hidden" id="finalSurprise">
+          <div class="fireworks-title">HAPPY BIRTHDAY VICKY!</div>
+          <div class="final-photo-frame">
+            <img src="images/vicky-final.jpg" alt="Vicky, the birthday girl">
+          </div>
+          <p class="final-name">Vicky, you are my best friend! 💖</p>
+          <p class="final-note">May your life sparkle with happiness, love, and beautiful dreams.</p>
+          <button class="secondary-btn" id="replayFireworks">🎆 More fireworks</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
